@@ -51,6 +51,12 @@ CSS TABLE OF CONTENTS
 
     /* DEFINE ALL COMMONLY USED COLORS HERE */
     --color-body-background: rgb(255 255 255);
+
+    /* CUSTOM BODY COLORS */
+    --color-body-background-green: #556318;
+    --color-body-background-vanilla: #F3EFD0;
+    --color-body-background-gray: #31302A;
+
     --color-text-body: rgb(0 0 0 / .8);
     --color-text-headings: rgb(0 0 0 / 1);
 
@@ -69,6 +75,10 @@ CSS TABLE OF CONTENTS
     --color-hero-headings: rgb(255 255 255 / 1);
 
     --color-sitefooter-background: rgb(100 100 100);
+    /* CUSTOM BODY COLORS */
+    --color-sitefooter-background-green: #556318;
+    --color-sitefooter-background-gray: #31302A;
+
     --color-sitefooter-text: rgb(255 255 255 / .8);
     --color-sitefooter-headings: rgb(255 255 255 / 1);
     --color-sitefooter-links: rgb(255 255 255);
@@ -740,10 +750,33 @@ section {
 }
 
 /* ------------------- */
-/* -- ANIMATION -- */
+/* ---- ANIMATION ---- */
 /* ------------------- */
 
 /* ENABLE NATIVE SMOOTH SCROLLING */
 html {
     scroll-behavior: smooth;
+}
+
+/* -------------------- */
+/* -- Custom Styling -- */
+/* -------------------- */
+
+:root {
+
+    /* DEFINE */
+
+}
+
+/* SIMPLE CARD */
+.centered-card-group {
+    display: flex;
+    justify-content: center;
+    gap: var(--unit-small);
+
+    .centered-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: var(--unit-small);
+    }
 }
