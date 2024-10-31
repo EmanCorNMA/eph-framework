@@ -84,8 +84,9 @@ CSS TABLE OF CONTENTS
     --color-sitefooter-links: rgb(255 255 255);
 
     /*  DEFINE ALL FONTS USED HERE */
-    --font-body: system-ui, Helvetica, Arial, sans-serif;
-    --font-headings: system-ui, Helvetica, Arial, sans-serif;
+    --font-body: "Open Sans", system-ui, Helvetica, Arial, sans-serif;
+    --font-headings: "Source Serif 4", serif;
+    --font-sub-headings: "Open Sans", system-ui, Helvetica, Arial, sans-serif;
 
     /* SIZING UNITS */
     --container-width: 1100px;
@@ -107,6 +108,14 @@ CSS TABLE OF CONTENTS
 body {
     margin: 0;
 }
+
+body::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+/* Hide scrollbars */
+
 
 /* GLOBAL COLORS */
 body {
@@ -150,10 +159,13 @@ body {
 }
 
 /* SET THE FONT FAMILY AND MARGINS FOR ALL HEADINGS */
-h1,
-h2,
-h3 {
+h1 {
     font-family: var(--font-headings);
+    margin: .4em 0;
+}
+
+h2 {
+    font-family: var(--font-sub-headings);
     margin: .4em 0;
 }
 
@@ -636,9 +648,9 @@ body {
     }
 
     /* ADD MORE SPACE ON TOP FOR THE ABSOLUTE HEADER */
-    &+.site-main>.hero {
+    /*&+.site-main>.hero {
         padding-top: calc(4em + var(--unit-large));
-    }
+    }*/
 
 }
 
@@ -658,9 +670,17 @@ section {
     color: var(--color-hero-text);
 
     h1 {
-        font-size: 4em;
-        line-height: 1;
+        font-size: 8em;
+        line-height: .5;
         text-wrap: balance;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 2em;
+        line-height: 1.2;
+        text-wrap: balance;
+        font-weight: 200;
     }
 
     h1,
@@ -807,4 +827,35 @@ html {
         border-radius: 10px;
         padding: var(--unit-small);
     }
+}
+
+/* HERO STYLING */
+
+.hero {
+    padding: 0;
+}
+
+.hero-img-container {
+    flex-shrink: 0;
+    width: 100%;
+    object-fit: cover;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.hero-content {
+    position: absolute;
+    box-sizing: border-box;
+    min-width: 100%;
+    margin-top: 8em;
+}
+
+.hero-heading-1 {
+    color: #556318;
 }
